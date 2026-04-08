@@ -43,7 +43,10 @@ app = FastAPI(title="Grocery Shop Admin API")
 # ✅ ADD THIS RIGHT HERE
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow all (for dev)
+    allow_origins=[
+        "http://localhost:3000",
+        "https://code12.online"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
