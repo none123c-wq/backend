@@ -713,6 +713,7 @@ async def startup_event():
     
     logger.info("Grocery Shop Admin API started successfully")
 
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
+import uvicorn
+
+if __name__ == "__main__":
+    uvicorn.run("server:app", host="0.0.0.0", port=10000)
